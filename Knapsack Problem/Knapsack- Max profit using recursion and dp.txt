@@ -1,0 +1,38 @@
+"""
+    Given:
+    C, the total weight of backpack
+    N, the total number of Items
+    W, the weight of item I
+    P, the the profit gained by item I
+    
+    Maximise the profit by putting in any amount of items less than weight C.
+"""
+
+
+n=10
+c=78
+w=[10,10,12,12,12,12,12,15,15,15]
+p=[12,12,15,15,15,15,15,14,14,14]
+
+
+def knapsack(c,n,w,p): ##Getting the max profit
+    if c==0 or n==0:
+        return(0)
+    elif w[n-1]>c:
+        return((knapsack(c,n-1,w,p)))
+    else:
+        return(max(p[n-1]+knapsack(c-w[n-1],n-1,w,p),knapsack(c,n-1,w,p)))
+
+def knapsack_dp(c,n,q,p): ##Getting objects using dynamic programming
+    table=[[0 for x in range (c+1)] for y in range(n+1)]
+    for i in range(n+1):
+        for j in range(c+1):
+            if i==0 or j==0:
+                table[i][j]=0
+            elif w[n-1]<=j:
+                table[i][j]=max(p[i-1]+table[i-1][j-w[i-1]],table[i-1][j])
+            else:
+                table[i][j]=table[i-1][j]
+    return table[n][c]
+knapsack(c,n,w,p)    
+knapsack_dp(c,n,w,p)
