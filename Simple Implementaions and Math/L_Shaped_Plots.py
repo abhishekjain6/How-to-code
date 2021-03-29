@@ -1,3 +1,6 @@
+"""
+https://codingcompetitions.withgoogle.com/kickstart/round/0000000000436140/000000000068c509
+"""
 for t in range(int(input())):
     r,c=map(int,input().split())
     arr=[]
