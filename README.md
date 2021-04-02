@@ -1,5 +1,10 @@
 # How-to-code
 A refference for programming problems, from all over DSA
--Recursion
--Dynamic Programming
--Bitmasking
+
+Try attempting the problem before you look at the solution.
+
+I have added question/ question link.
+
+Do star or fork into your repos.
+
+Peace!
