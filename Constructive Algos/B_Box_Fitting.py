@@ -25,8 +25,6 @@ for _ in range(int(input())):
                     max_p=pow(2,x)
                     k=x
                     flag=1
-                    
-                    
         if flag:
             d[k]-=1
             c_w-=max_p
