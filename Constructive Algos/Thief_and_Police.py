@@ -1,7 +1,6 @@
 """
-https://codeforces.com/contest/1514/problem/B
+https://www.codechef.com/START3B/problems/TANDP
 """
-
 from sys import stdin
 input = stdin.readline
 from heapq import heapify,heappush,heappop,heappushpop
@@ -20,18 +19,17 @@ lcm = lambda a,b : (a*b)//gcd(a,b)
 
 
 def solve():
-    MOD=10**9+7 
-    n,k=mi()
-    ans=1
-    while(k):
-        if k%2==1:
-            ans*=n
-        n=(n**2)%MOD
-        k//=2
-        
-    print(ans%MOD)
+    n,m=mi()
+    x,y=mi()
+    a,b=mi()
+    tmoves=n-x+m-y
     
+    pmoves=max(n-a,m-b)
+    #print(pmoves)
+    #print(tmoves)
+    if pmoves>=tmoves:
+        print("YES")
+    else:
+        print("NO")    
 for _ in range(ii()):
     solve()
-
-    
