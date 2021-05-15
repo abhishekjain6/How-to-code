@@ -10,7 +10,7 @@ def show(n):
             print(a,end=" ")
         a+=1
     print("")
-N=17 ## array =[1,2,3....16,17], change if you wish
+N=10 ## array =[1,2,3....16,17], change if you wish
 
 #For N, we will need a binary number of max length l=N
 
