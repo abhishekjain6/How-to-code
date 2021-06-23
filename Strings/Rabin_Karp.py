@@ -13,17 +13,25 @@ lm=len(m)
 h={chr(x):x-96 for x in range(97,97+26)}
 check=0
 for x in range(lm):
-    check+=h[m[x]]*26**(lm-1-x)
-for x in range(0,ln-lm+1):
-    to_check=0
-    p=0
-    for y in range(x,x+lm):
-        to_check+=h[n[y]]*26**(lm-1-p)
+    check+=h[m[x]]*(26**(x))
 
-        p+=1
+to_check=0
+
+
+for x in range(ln-lm+1):
+    if x==0:
+        for y in range(lm):
+            to_check+=h[n[y]]*(26**(y))
+    else:
+        to_check-=(h[n[x-1]])
+        to_check//=26
+        to_check+=h[n[x+lm-1]]*(26**(lm-1))  
     if to_check==check:
         if n[x:x+lm]==m:
             print(x+1)
-            break
+    
+    
+
+    
 
 
